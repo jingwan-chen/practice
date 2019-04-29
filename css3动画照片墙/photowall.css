@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html,body, .wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height: 100%;
+}
+.wrapper{
+    background: black;
+}
+.wrapper .content{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: 80%;
+    align-items: center;
+}
+.wrapper .content .item{
+    width: 16%;
+    height: 100%;
+    border-radius: 20px;
+    background: #333;
+    overflow: hidden;
+    transition: height 0.5s linear 0.5s,width 0.5s linear;
+}
+.wrapper .item .inner{
+    position: relative;
+    width:100%;
+    height: 100%;
+    transition: transform 0.5s linear;
+}
+.init .item .inner{
+    transform: translate3d(0,100%,0);
+}
+.item:nth-of-type(1) .inner{
+    transition-delay: 0.1s;
+}
+.item:nth-of-type(2) .inner{
+    transition-delay: 0.2s;
+}
+.item:nth-of-type(3) .inner{
+    transition-delay: 0.3s;
+}
+.item:nth-of-type(4) .inner{
+    transition-delay: 0.4s;
+}
+.item:nth-of-type(5) .inner{
+    transition-delay: 0.5s;
+}
+.item:nth-of-type(6) .inner{
+    transition-delay: 0.6s;
+}
+.wrapper .content .item .inner .bj{
+    width:100%;
+    height: 100%;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+}
+.wrapper .content .item:hover .inner .bj{
+    opacity: 1;
+}
+.wrapper .content .item:hover .inner .title{
+    font-size: 25px;
+}
+.item:nth-of-type(1) .inner .bj{
+    background: url('./image/sy1.jpg');
+}
+.item:nth-of-type(2) .inner .bj{
+    background: url('./image/sy2.jpg');
+}
+.item:nth-of-type(3) .inner .bj{
+    background: url('./image/sy3.jpg');
+}
+.item:nth-of-type(4) .inner .bj{
+    background: url('./image/sy4.jpg');
+}
+.item:nth-of-type(5) .inner .bj{
+    background: url('./image/sy5.jpg');
+}
+.item:nth-of-type(6) .inner .bj{
+    background: url('./image/sy6.jpg');
+}
+.item .inner .title{
+    position: absolute;
+    bottom: 10%;
+    left: 30%;
+    color: #666;
+    font-size: 20px;
+    opacity: 1;
+}
+.activeWrap .content .item.active{
+    width: 100%;
+}
+.activeWrap .item:not(.active){
+    width: 0;
+    height: 0;
+}
+.activeWrap .item{
+    transition: height 0.5s linear,width 0.5s linear 0.5s;
+}
+.activeWrap .item .title{
+    opacity: 0;
+}
+.item .dir{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height: 5%;
+    opacity: 0;
+}
+.item.active .dir{
+   opacity: 1;
+   transition: opacity 0.5s linear 1s;
+}
+.activeWrap .item .dir .name{
+    position: absolute;
+    left: 20px;
+    font-size: 30px;
+    color:black;
+}
+.activeWrap .item .dir .close{
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 0;
+    /* background: url('./image/closebtn.jpg');
+    background-size: 100%;
+    border-radius: 25%; */
+    cursor: pointer;
+    transform-origin: center center;
+    transform: rotateZ(360deg);
+    transition: transform 0.5s linear 0.5s;
+}
+.activeWrap .item .dir .close .closeleft{
+    
+    width: 2px;
+    height: 30px;
+    background-color: black;
+    transform: rotateZ(45deg);
+    display: inline-block;
+}
+.activeWrap .item .dir .close .closeright{
+   
+    width: 2px;
+    height: 30px;
+    background-color: black;
+    transform: rotateZ(135deg);
+    display: inline-block;
+}
+.activeWrap .item .dir .close:hover{
+    transform: rotateZ(720deg);
+    transition: transform 0.5s linear;
+}
